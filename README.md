@@ -13,7 +13,22 @@ Se desarrolla una aplicación móvil para agenda en Android Studio y SQLite.
 - Insertar registros en tabla contactos
 - Actualizar estructura de base de datos
 
-**Link del vídeo:** [https://youtu.be/k6XVblpUAZs](https://youtu.be/k6XVblpUAZs) 
+**Link del vídeo:** [https://youtu.be/k6XVblpUAZs](https://youtu.be/k6XVblpUAZs)
+
+## Vídeo 3 📋
+- Lista dinámica con RecyclerView
+- Consultar registros de tabla contactos
+- Adaptador para crear vista individual para elementos de lista
+
+**Link del vídeo:** [https://youtu.be/UfZJWqm2A5w](https://youtu.be/UfZJWqm2A5w)
+
+## Vídeo 4 📝
+- Vista para ver detalles de registro
+- Formulario para editar registro
+- Consultar registros individuales de tabla contactos
+- Actualizar registros de tabla contactos
+
+**Link del vídeo:** [https://youtu.be/UfZJWqm2A5w](https://youtu.be/UfZJWqm2A5w) 
 
 
 ## Autores ✒️
