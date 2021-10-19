@@ -15,13 +15,18 @@ import com.cdp.agenda.VerActivity;
 import com.cdp.agenda.entidades.Contactos;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> {
 
     ArrayList<Contactos> listaContactos;
+    ArrayList<Contactos> listaOriginal;
 
-    public ListaContactosAdapter(ArrayList<Contactos> listaContactos){
+    public ListaContactosAdapter(ArrayList<Contactos> listaContactos) {
         this.listaContactos = listaContactos;
+        listaOriginal = new ArrayList<>();
+        listaOriginal.addAll(listaContactos);
     }
 
     @NonNull
@@ -36,6 +41,29 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
         holder.viewNombre.setText(listaContactos.get(position).getNombre());
         holder.viewTelefono.setText(listaContactos.get(position).getTelefono());
         holder.viewCorreo.setText(listaContactos.get(position).getCorreo_electornico());
+    }
+
+    public void filtrado(final String txtBuscar) {
+        int longitud = txtBuscar.length();
+        if (longitud == 0) {
+            listaContactos.clear();
+            listaContactos.addAll(listaOriginal);
+        } else {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                List<Contactos> collecion = listaContactos.stream()
+                        .filter(i -> i.getNombre().toLowerCase().contains(txtBuscar.toLowerCase()))
+                        .collect(Collectors.toList());
+                listaContactos.clear();
+                listaContactos.addAll(collecion);
+            } else {
+                for (Contactos c : listaOriginal) {
+                    if (c.getNombre().toLowerCase().contains(txtBuscar.toLowerCase())) {
+                        listaContactos.add(c);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override

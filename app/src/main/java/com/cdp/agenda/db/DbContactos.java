@@ -50,7 +50,7 @@ public class DbContactos extends DbHelper {
         Contactos contacto;
         Cursor cursorContactos;
 
-        cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS, null);
+        cursorContactos = db.rawQuery("SELECT * FROM " + TABLE_CONTACTOS + " ORDER BY nombre ASC", null);
 
         if (cursorContactos.moveToFirst()) {
             do {
