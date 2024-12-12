@@ -17,9 +17,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EditarActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreo;
+    EditText txtNombre;
+    EditText txtTelefono;
+    EditText txtCorreo;
     Button btnGuarda;
-    FloatingActionButton fabEditar, fabEliminar;
+    FloatingActionButton fabEditar;
+    FloatingActionButton fabEliminar;
     boolean correcto = false;
     Contactos contacto;
     int id = 0;

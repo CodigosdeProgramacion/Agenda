@@ -12,7 +12,9 @@ import com.cdp.agenda.db.DbContactos;
 
 public class NuevoActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreoElectronico;
+    EditText txtNombre;
+    EditText txtTelefono;
+    EditText txtCorreoElectronico;
     Button btnGuarda;
 
     @Override

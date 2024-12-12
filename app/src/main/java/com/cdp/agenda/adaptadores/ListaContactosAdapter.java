@@ -73,7 +73,9 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder {
 
-        TextView viewNombre, viewTelefono, viewCorreo;
+        TextView viewNombre;
+        TextView viewTelefono;
+        TextView viewCorreo;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);

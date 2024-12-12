@@ -18,9 +18,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VerActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtCorreo;
+    EditText txtNombre;
+    EditText txtTelefono;
+    EditText txtCorreo;
     Button btnGuarda;
-    FloatingActionButton fabEditar, fabEliminar;
+    FloatingActionButton fabEditar;
+    FloatingActionButton fabEliminar;
 
     Contactos contacto;
     int id = 0;
