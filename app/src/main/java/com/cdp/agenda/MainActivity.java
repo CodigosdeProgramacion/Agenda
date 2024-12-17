@@ -64,14 +64,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.menuNuevo:
-                nuevoRegistro();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.menuNuevo) {
+            nuevoRegistro();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void nuevoRegistro(){
