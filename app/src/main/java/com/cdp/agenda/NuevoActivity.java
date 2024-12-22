@@ -31,7 +31,7 @@ public class NuevoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
+                if(!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
 
                     DbContactos dbContactos = new DbContactos(NuevoActivity.this);
                     long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());

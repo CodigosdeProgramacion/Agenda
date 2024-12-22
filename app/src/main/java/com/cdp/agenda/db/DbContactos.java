@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class DbContactos extends DbHelper {
 
-    Context context;
+    final Context context;
 
     public DbContactos(@Nullable Context context) {
         super(context);
@@ -103,7 +103,6 @@ public class DbContactos extends DbHelper {
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
-            correcto = false;
         } finally {
             db.close();
         }
@@ -123,7 +122,6 @@ public class DbContactos extends DbHelper {
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
-            correcto = false;
         } finally {
             db.close();
         }

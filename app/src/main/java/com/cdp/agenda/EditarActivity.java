@@ -64,7 +64,7 @@ public class EditarActivity extends AppCompatActivity {
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
+                if (!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
                     correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
 
                     if(correcto){

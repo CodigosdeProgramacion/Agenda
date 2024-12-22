@@ -20,8 +20,8 @@ import java.util.stream.Collectors;
 
 public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAdapter.ContactoViewHolder> {
 
-    ArrayList<Contactos> listaContactos;
-    ArrayList<Contactos> listaOriginal;
+    final ArrayList<Contactos> listaContactos;
+    final ArrayList<Contactos> listaOriginal;
 
     public ListaContactosAdapter(ArrayList<Contactos> listaContactos) {
         this.listaContactos = listaContactos;
@@ -73,9 +73,9 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder {
 
-        TextView viewNombre;
-        TextView viewTelefono;
-        TextView viewCorreo;
+        final TextView viewNombre;
+        final TextView viewTelefono;
+        final TextView viewCorreo;
 
         public ContactoViewHolder(@NonNull View itemView) {
             super(itemView);
