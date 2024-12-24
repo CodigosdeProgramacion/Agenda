@@ -84,14 +84,11 @@ public class ListaContactosAdapter extends RecyclerView.Adapter<ListaContactosAd
             viewTelefono = itemView.findViewById(R.id.viewTelefono);
             viewCorreo = itemView.findViewById(R.id.viewCorreo);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, VerActivity.class);
-                    intent.putExtra("ID", listaContactos.get(getAdapterPosition()).getId());
-                    context.startActivity(intent);
-                }
+            itemView.setOnClickListener(view -> {
+                Context context = view.getContext();
+                Intent intent = new Intent(context, VerActivity.class);
+                intent.putExtra("ID", listaContactos.get(getAdapterPosition()).getId());
+                context.startActivity(intent);
             });
         }
     }

@@ -61,21 +61,18 @@ public class EditarActivity extends AppCompatActivity {
             txtCorreo.setText(contacto.getCorreo_electornico());
         }
 
-        btnGuarda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
-                    correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
+        btnGuarda.setOnClickListener(view -> {
+            if (!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
+                correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreo.getText().toString());
 
-                    if(correcto){
-                        Toast.makeText(EditarActivity.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
-                        verRegistro();
-                    } else {
-                        Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR REGISTRO", Toast.LENGTH_LONG).show();
-                    }
+                if(correcto){
+                    Toast.makeText(EditarActivity.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
+                    verRegistro();
                 } else {
-                    Toast.makeText(EditarActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR REGISTRO", Toast.LENGTH_LONG).show();
                 }
+            } else {
+                Toast.makeText(EditarActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -43,12 +43,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         adapter = new ListaContactosAdapter(dbContactos.mostrarContactos());
         listaContactos.setAdapter(adapter);
 
-        fabNuevo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nuevoRegistro();
-            }
-        });
+        fabNuevo.setOnClickListener(view -> nuevoRegistro());
 
         txtBuscar.setOnQueryTextListener(this);
     }

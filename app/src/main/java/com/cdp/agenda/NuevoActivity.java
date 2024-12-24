@@ -27,24 +27,21 @@ public class NuevoActivity extends AppCompatActivity {
         txtCorreoElectronico = findViewById(R.id.txtCorreoElectronico);
         btnGuarda = findViewById(R.id.btnGuarda);
 
-        btnGuarda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnGuarda.setOnClickListener(view -> {
 
-                if(!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
+            if(!txtNombre.getText().toString().isEmpty() && !txtTelefono.getText().toString().isEmpty()) {
 
-                    DbContactos dbContactos = new DbContactos(NuevoActivity.this);
-                    long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
+                DbContactos dbContactos = new DbContactos(NuevoActivity.this);
+                long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtCorreoElectronico.getText().toString());
 
-                    if (id > 0) {
-                        Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
-                        limpiar();
-                    } else {
-                        Toast.makeText(NuevoActivity.this, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
-                    }
+                if (id > 0) {
+                    Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show();
+                    limpiar();
                 } else {
-                    Toast.makeText(NuevoActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NuevoActivity.this, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show();
                 }
+            } else {
+                Toast.makeText(NuevoActivity.this, "DEBE LLENAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
             }
         });
     }
