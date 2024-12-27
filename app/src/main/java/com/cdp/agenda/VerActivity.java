@@ -72,20 +72,14 @@ public class VerActivity extends AppCompatActivity {
         fabEliminar.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(VerActivity.this);
             builder.setMessage("¿Desea eliminar este contacto?")
-                    .setPositiveButton("SI", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
+                    .setPositiveButton("SI", (dialogInterface, i) -> {
 
-                            if(dbContactos.eliminarContacto(id)){
-                                lista();
-                            }
+                        if(dbContactos.eliminarContacto(id)){
+                            lista();
                         }
                     })
-                    .setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
+                    .setNegativeButton("NO", (dialogInterface, i) -> {
 
-                        }
                     }).show();
         });
     }
