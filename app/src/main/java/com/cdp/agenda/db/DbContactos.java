@@ -35,7 +35,7 @@ public class DbContactos extends DbHelper {
 
             id = db.insert(TABLE_CONTACTOS, null, values);
         } catch (Exception ex) {
-            ex.toString();
+            ex.printStackTrace();
         }
 
         return id;
@@ -102,7 +102,7 @@ public class DbContactos extends DbHelper {
             db.execSQL("UPDATE " + TABLE_CONTACTOS + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
             correcto = true;
         } catch (Exception ex) {
-            ex.toString();
+            ex.printStackTrace();
         } finally {
             db.close();
         }
@@ -121,7 +121,7 @@ public class DbContactos extends DbHelper {
             db.execSQL("DELETE FROM " + TABLE_CONTACTOS + " WHERE id = '" + id + "'");
             correcto = true;
         } catch (Exception ex) {
-            ex.toString();
+            ex.printStackTrace();
         } finally {
             db.close();
         }

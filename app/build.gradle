@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.cdp.agenda"
         minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 2
-        versionName "1.1"
+        targetSdkVersion 33
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
