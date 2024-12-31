@@ -58,7 +58,7 @@ public class EditarActivity extends AppCompatActivity {
         if (contacto != null) {
             txtNombre.setText(contacto.getNombre());
             txtTelefono.setText(contacto.getTelefono());
-            txtCorreo.setText(contacto.getCorreo_electornico());
+            txtCorreo.setText(contacto.getCorreoElectornico());
         }
 
         btnGuarda.setOnClickListener(view -> {

@@ -5,7 +5,7 @@ public class Contactos {
     private int id;
     private String nombre;
     private String telefono;
-    private String correo_electornico;
+    private String correoElectornico;
 
     public int getId() {
         return id;
@@ -31,11 +31,11 @@ public class Contactos {
         this.telefono = telefono;
     }
 
-    public String getCorreo_electornico() {
-        return correo_electornico;
+    public String getCorreoElectornico() {
+        return correoElectornico;
     }
 
-    public void setCorreo_electornico(String correo_electornico) {
-        this.correo_electornico = correo_electornico;
+    public void setCorreoElectornico(String correoElectornico) {
+        this.correoElectornico = correoElectornico;
     }
 }

@@ -56,7 +56,7 @@ public class VerActivity extends AppCompatActivity {
         if(contacto != null){
             txtNombre.setText(contacto.getNombre());
             txtTelefono.setText(contacto.getTelefono());
-            txtCorreo.setText(contacto.getCorreo_electornico());
+            txtCorreo.setText(contacto.getCorreoElectornico());
             txtNombre.setInputType(InputType.TYPE_NULL);
             txtTelefono.setInputType(InputType.TYPE_NULL);
             txtCorreo.setInputType(InputType.TYPE_NULL);
